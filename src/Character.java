@@ -9,10 +9,9 @@ public class Character implements Job,Accessorie {
     double max_Speed;
     int damage;
     int now_HP,now_Mana,now_Defend;
-    boolean eq_Sword;
-    boolean eq_Shield;
-    boolean eq_Muramasa;
-    boolean eq_OmniArms;
+    boolean eq_Sword ,eq_Shield;
+    boolean eq_Muramasa ,eq_OmniArms;
+    boolean thief,shieldguy;
     boolean magicAb;
     boolean physicalAb;
 
@@ -69,7 +68,7 @@ public class Character implements Job,Accessorie {
     }
     public void equip_SW(Equipment.sword x){
         if(eq_Sword){
-            System.out.println("YOU EQUIPPED A SWORD.");
+            System.out.println("YOU EQUIPPED A SWORD.!!!");
         }
         else {
             eq_Sword = true;
@@ -80,7 +79,7 @@ public class Character implements Job,Accessorie {
     }
     public void un_EquipSW(Equipment.sword x){
         if(!eq_Sword){
-            System.out.println("YOU DON'T EQUIP A SWORD.");
+            System.out.println("YOU DON'T EQUIP A SWORD.!!!");
         }
         else {
             eq_Sword = false;
@@ -91,7 +90,7 @@ public class Character implements Job,Accessorie {
     }
     public void equip_SH(Equipment.shield x){
         if(eq_Shield){
-            System.out.println("YOU EQUIPPED A SHIELD.");
+            System.out.println("YOU EQUIPPED A SHIELD.!!!");
         }
         else {
             eq_Shield = true;
@@ -104,7 +103,7 @@ public class Character implements Job,Accessorie {
     }
     public void un_EquipSH(Equipment.shield x){
         if(!eq_Shield){
-            System.out.println("YOU DON'T EQUIP A SHIELD.");
+            System.out.println("YOU DON'T EQUIP A SHIELD.!!!");
         }
         else {
             eq_Shield = false;
@@ -116,7 +115,7 @@ public class Character implements Job,Accessorie {
     }
     public void equip_Muramasa(Equipment.muramasa x){
         if(eq_Muramasa){
-            System.out.println("YOU EQUIPED A MURAMASA.");
+            System.out.println("YOU EQUIPED A MURAMASA.!!!");
         }
         else {
             eq_Muramasa = true;
@@ -126,7 +125,7 @@ public class Character implements Job,Accessorie {
     }
     public void un_EquipMS(Equipment.muramasa x){
         if(!eq_Muramasa){
-            System.out.println("YOU DON'T EQUIP A MURAMASA.");
+            System.out.println("YOU DON'T EQUIP A MURAMASA.!!!");
         }
         else {
             eq_Muramasa = false;
@@ -136,7 +135,7 @@ public class Character implements Job,Accessorie {
     }
     public void equip_OmniArms(Equipment.omniarms x){
         if(eq_OmniArms){
-            System.out.println("YOU EQUIPED A OMNIARMS.");
+            System.out.println("YOU EQUIPED A OMNIARMS.!!!");
         }
         else {
             eq_OmniArms = true;
@@ -146,7 +145,7 @@ public class Character implements Job,Accessorie {
     }
     public void un_EquipOA(Equipment.omniarms x){
         if(!eq_OmniArms){
-            System.out.println("YOU DON'T EQUIP A OMNIARMS.");
+            System.out.println("YOU DON'T EQUIP A OMNIARMS.!!!");
         }
         else {
             eq_OmniArms = false;
@@ -155,21 +154,29 @@ public class Character implements Job,Accessorie {
         }
     }
     public void theThief(Character x){
-        magicAb = true;
-        physicalAb = false;
+        if(thief) { System.out.println("You are the Thief NOW !!!"); }
+        else {
+            magicAb = true;
+            physicalAb = false;
+            thief = true;
 
-        max_Defend -= 15;
-        max_Speed += 10;
-        max_HP -= 50;
-        damage += 30;
+            max_Defend -= 15;
+            max_Speed += 10;
+            max_HP -= 50;
+            damage += 30;
+        }
     }
     public void shieldGuy(Character x){
-        physicalAb = true;
-        magicAb = false;
+        if(shieldguy){ System.out.println("You are Shield Guy NOW!!!"); }
+        else {
+            physicalAb = true;
+            magicAb = false;
+            shieldguy = true;
 
-        max_Defend += 20;
-        max_Speed -= 5;
-        max_HP += 100;
-        damage -= 20;
+            max_Defend += 20;
+            max_Speed -= 5;
+            max_HP += 100;
+            damage -= 20;
+        }
     }
 }

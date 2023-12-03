@@ -15,6 +15,7 @@ public class Main {
 
         System.out.println("Genji is the Thief!!!");
         Genji.theThief(Genji);
+        Genji.theThief(Genji);
         System.out.println("Speed "+Genji.get_Speed());
         System.out.println("HP "+Genji.get_HP());
         System.out.println("Damage "+Genji.get_Damage());
