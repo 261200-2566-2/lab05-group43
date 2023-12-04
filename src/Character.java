@@ -120,7 +120,7 @@ public class Character implements Job,Accessorie {
         else {
             eq_Muramasa = true;
             damage += 20;
-            now_HP += 10;
+            max_HP += 10;
         }
     }
     public void un_EquipMS(Equipment.muramasa x){
@@ -150,7 +150,7 @@ public class Character implements Job,Accessorie {
         else {
             eq_OmniArms = false;
             max_Speed -= 20;
-            now_HP -= 20;
+            max_HP -= 20;
         }
     }
     public void theThief(Character x){
